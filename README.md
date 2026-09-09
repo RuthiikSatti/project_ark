@@ -39,6 +39,8 @@ Phone / Laptop
 - Docker installed and verified with a successful container test
 - Portainer deployed as the Docker management interface
 - First NGINX container/stack deployed and accessed successfully from multiple devices
+- Docker bind mount and volume storage mechanisms tested side-by-side
+- Docker volume persistence verified across container removal and recreation
 - Initial architecture and infrastructure decisions documented
 
 ## What ARK Is Becoming
@@ -81,7 +83,8 @@ project_ark/
 │   ├── architecture.md
 │   ├── decisions.md
 │   ├── hardware.md
-│   └── network.md
+│   ├── network.md
+│   └── storage.md
 ├── infrastructure/
 │   └── README.md
 └── scripts/
