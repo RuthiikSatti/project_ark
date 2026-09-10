@@ -45,7 +45,20 @@ Portainer is the management layer for Docker. It provides a graphical interface 
 
 ### Persistent Storage
 
-Application data needs to live outside disposable containers. The current system has a 1 TB storage drive, with larger storage planned as the infrastructure grows.
+Application data needs to live outside disposable containers. The physical 1 TB storage drive planned for ARK has not yet been added. Larger and more resilient storage will be introduced as the infrastructure grows.
+
+## Current Container Networking
+
+The current Compose services use a project network created automatically by Docker Compose:
+
+```text
+services_default
+      │
+      ├── web
+      └── test-client
+```
+
+Containers on the same Compose network can communicate using service names. The current test environment verified both DNS resolution and HTTP communication from `test-client` to `web`.
 
 ## Example: Future Photo Flow
 
