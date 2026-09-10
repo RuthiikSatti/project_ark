@@ -22,13 +22,13 @@ Phone / Laptop
     Docker
       │
       ├── Portainer
-      └── Future Services
-            ├── Nextcloud
-            ├── Automation
-            └── AI Assistant
+      └── Application Containers
+            ├── Nextcloud (planned)
+            ├── Automation (planned)
+            └── AI Assistant (planned)
       │
       ▼
-   Local Storage
+   Persistent Storage (planned)
 ```
 
 ## What Has Been Built
@@ -38,9 +38,13 @@ Phone / Laptop
 - Windows Subsystem for Linux (WSL2) repaired/configured for the Docker environment
 - Docker installed and verified with a successful container test
 - Portainer deployed as the Docker management interface
-- First NGINX container/stack deployed and accessed successfully from multiple devices
+- NGINX Compose services deployed and accessed successfully
 - Docker bind mount and volume storage mechanisms tested side-by-side
 - Docker volume persistence verified across container removal and recreation
+- Multi-container Docker networking and service-name DNS verified
+- Container-to-container HTTP communication verified
+- Environment-variable configuration verified inside a running container
+- Compose restart and recovery verified
 - Initial architecture and infrastructure decisions documented
 
 ## What ARK Is Becoming
@@ -84,6 +88,7 @@ project_ark/
 │   ├── decisions.md
 │   ├── hardware.md
 │   ├── network.md
+│   ├── phase-2.md
 │   └── storage.md
 ├── infrastructure/
 │   └── README.md
