@@ -23,12 +23,12 @@ Phone / Laptop
       │
       ├── Portainer
       └── Application Containers
-            ├── Nextcloud (planned)
+            ├── Nextcloud
             ├── Automation (planned)
             └── AI Assistant (planned)
       │
       ▼
-   Persistent Storage (planned)
+   Persistent Storage
 ```
 
 ## What Has Been Built
@@ -45,6 +45,11 @@ Phone / Laptop
 - Container-to-container HTTP communication verified
 - Environment-variable configuration verified inside a running container
 - Compose restart and recovery verified
+- Nextcloud deployed with MariaDB
+- Nextcloud connected to persistent Windows storage
+- Private remote Nextcloud access verified from laptop and phone through Tailscale
+- Remote file persistence verified across container restart
+- Local `.env` configuration and `.gitignore` protection added for database credentials
 - Initial architecture and infrastructure decisions documented
 
 ## What ARK Is Becoming
@@ -89,6 +94,7 @@ project_ark/
 │   ├── hardware.md
 │   ├── network.md
 │   ├── phase-2.md
+│   ├── phase-3.md
 │   └── storage.md
 ├── infrastructure/
 │   └── README.md
