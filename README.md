@@ -28,7 +28,10 @@ Phone / Laptop
             └── AI Assistant (planned)
       │
       ▼
-   Persistent Storage
+ D: ARK Storage (1 TB NTFS)
+      │
+      ├── Services / Nextcloud
+      └── Services / Database
 ```
 
 ## What Has Been Built
@@ -50,6 +53,12 @@ Phone / Laptop
 - Private remote Nextcloud access verified from laptop and phone through Tailscale
 - Remote file persistence verified across container restart
 - Local `.env` configuration and `.gitignore` protection added for database credentials
+- Dedicated 1 TB NTFS ARK storage drive added and structured
+- Nextcloud and MariaDB persistent data migrated to the dedicated storage drive
+- Nextcloud permissions repaired and application health verified after migration
+- Automatic restart configured for Nextcloud and MariaDB
+- Docker Desktop startup and full reboot recovery verified
+- Initial Nextcloud database and file backups created on the internal SSD
 - Initial architecture and infrastructure decisions documented
 
 ## What ARK Is Becoming
@@ -59,7 +68,7 @@ ARK is being built in stages:
 1. **Foundation** — hardware, operating system, networking, and remote access
 2. **Containerization** — Docker and service management
 3. **Private Cloud** — Nextcloud for files and photos
-4. **Storage** — larger and more resilient storage as the hardware evolves
+4. **Storage** — dedicated 1 TB storage, migration, recovery, and backup baseline **(completed)**
 5. **Automation** — scheduled tasks and personal workflows
 6. **AI Layer** — a persistent personal AI assistant running on the infrastructure
 7. **Scalability** — migrate services to stronger hardware without rebuilding the entire architecture
@@ -95,6 +104,7 @@ project_ark/
 │   ├── network.md
 │   ├── phase-2.md
 │   ├── phase-3.md
+│   ├── phase-4.md
 │   └── storage.md
 ├── infrastructure/
 │   └── README.md
