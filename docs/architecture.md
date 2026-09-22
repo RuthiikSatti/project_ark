@@ -45,7 +45,14 @@ Portainer is the management layer for Docker. It provides a graphical interface 
 
 ### Persistent Storage
 
-Application data needs to live outside disposable containers. The physical 1 TB storage drive planned for ARK has not yet been added. Larger and more resilient storage will be introduced as the infrastructure grows.
+ARK now uses a dedicated 1 TB external NTFS drive labeled `ARK Storage` as drive `D:`. Primary Nextcloud and MariaDB data has been migrated off the Windows system disk:
+
+```text
+D:\Services\Nextcloud
+D:\Services\Database
+```
+
+The internal SSD holds a secondary backup baseline under `C:\ARK\Backups`, including a logical MariaDB dump and a copy of Nextcloud user data. This is a useful second copy but is not yet an independent disaster-recovery target because both drives remain attached to the same host.
 
 ## Current Container Networking
 
@@ -80,7 +87,7 @@ ARK
 Docker / Nextcloud
   │
   ▼
-Persistent Storage
+D: ARK Storage
 ```
 
 Other devices can then access the same files through Nextcloud without requiring every device to keep a complete local copy.
@@ -88,3 +95,10 @@ Other devices can then access the same files through Nextcloud without requiring
 ## Portability Goal
 
 The application layer should remain as independent as possible from the physical machine. If ARK eventually moves to a larger server, the goal is to migrate storage and service configuration rather than redesign the entire system.
+
+
+## Current Recovery Path
+
+The Windows host starts Tailscale automatically and Docker Desktop is enabled in Windows Startup Apps. Nextcloud and MariaDB use the Docker restart policy `unless-stopped`. A reboot test verified that Docker, Portainer, MariaDB, and Nextcloud recover automatically once the Windows startup sequence completes.
+
+The longer-term portability goal remains to keep service configuration and persistent data separable so the application layer can move to different hardware or a server-oriented operating system later.
