@@ -1,11 +1,20 @@
 # Environment and secrets
 .env
 .env.*
+*.env
 !.env.example
 *.pem
 *.key
 secrets/
 credentials/
+
+# WireGuard configurations contain private keys
+wireguard/
+*.conf
+
+# Backups and live application data
+Backups/
+Services/
 
 # Logs and temporary files
 *.log
@@ -14,3 +23,4 @@ credentials/
 # OS files
 .DS_Store
 Thumbs.db
+Desktop.ini
