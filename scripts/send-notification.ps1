@@ -34,4 +34,3 @@ catch {
     Write-Error "Failed to send Telegram notification."
     exit 1
 }
-
