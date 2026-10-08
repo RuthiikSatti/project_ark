@@ -1,0 +1,20 @@
+# Secrets and credentials
+.env
+*.env
+telegram.env
+wireguard/
+
+# Personal data, backups, and generated state
+backups/
+data/
+storage/
+reports/
+organizer/organized*/
+organizer/test_files/
+organizer/__pycache__/
+organizer/.venv/
+
+# Windows and editor files
+*.log
+Thumbs.db
+.DS_Store
